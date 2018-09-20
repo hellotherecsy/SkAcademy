@@ -13,13 +13,9 @@ apt-get install openjdk-8-jdk
 #### 설치 및 셋팅 ####
 su - zeppelin
 wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-all.tgz
+wget http://mirror.navercorp.com/apache/zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz
 tar -zxvf zeppelin-0.7.3-bin-all.tgz
 ln -s zeppelin-0.7.3-bin-all zeppelin
-
-
-
-
-
 
 cd ./zeppelin/conf
 
@@ -29,7 +25,7 @@ vi zeppelin-env.sh
 export ZEPPELIN_PORT=9090
 export HADOOP_HOME=/usr/hdp/current/hadoop-client
 export SPARK_HOME=/usr/hdp/current/spark2-client
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 
 #### 제플린 기동 ####
@@ -41,10 +37,15 @@ http://192.168.56.201:9090/
 
 
 #### dependency add #####
-https://zeppelin.apache.org/docs/0.7.3/interpreter/hive.html#overview
-Properties
-hive.driver : 	org.apache.hive.jdbc.HiveDriver
-hive.url	 : jdbc:hive2://localhost:10000
+https://zeppelin.apache.org/docs/0.8.0/interpreter/hive.html
+
+Property	Value
+hive.driver :	org.apache.hive.jdbc.HiveDriver
+hive.url    : jdbc:hive2://localhost:10000
+hive.user  	: hiveUser
+hive.password	:hivePassword
+
+
 
 Dependencies
 org.apache.hive:hive-jdbc:0.14.0

@@ -28,7 +28,7 @@ vi ./conf/nifi.properties
 nifi.web.http.port=7070
 
 vi ./conf/bootstrap.conf
-java=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+java=/usr/lib/jvm/java-8-openjdk-amd64
 
 ( 안되면 콘솔창에 )
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
